@@ -1,6 +1,6 @@
 const express = require("express");
 const app= express();
-const Port=4000;
+const Port = process.env.PORT || 4000;
 
 const http = require("http");
 const path = require("path");
@@ -30,4 +30,4 @@ app.get("/test", (req,res)=>{
     res.send("Working");
 });
 
-server.listen(Port, () => console.log("connected successfully !"));
+server.listen(Port, () => console.log(`Server Running on ${Port}`));
